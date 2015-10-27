@@ -32,13 +32,15 @@ man() {
 
 	# Change Directory
 	alias ..='cd ..'
+  alias ...='cd ../..'
+  alias cdhome='cd ~'
 	
     # Grep Color
 	alias grep='grep --color=auto'
 	alias egrep='egrep --color=auto'
 	alias fgrep='fgrep --color=auto'
 
-    # Make Parent Directorys ondemand
+  # Make Parent Directorys ondemand
 	alias mkdir='mkdir -pv'
 
 	# Color for diff with colordiff
@@ -52,6 +54,8 @@ man() {
 	alias mv='mv -i'
 	alias cp='cp -i'
 	alias ln='ln -i'
-	
+
+  # clear
+  alias c='clear'
 
 PS1='[\u@\h \W]\$ '

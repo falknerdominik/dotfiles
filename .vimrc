@@ -1,13 +1,13 @@
-" Vim Config
+"Vim Config
 
 "Syntax Highlighting
 syntax on
 
-" TAB = 4 Spaces
+"TAB = 4 Spaces
 set tabstop=2 shiftwidth=2 expandtab
 
-" Autoindent
+"Autoindent
 set autoindent
 
-" Show linenumber
+"Show linenumber
 set number
