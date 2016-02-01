@@ -14,48 +14,51 @@ man() {
     man "$@"
 }
 
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
 # Alias
 
   # FPC
   alias fpcaud='fpc -Mtp -Criot -gl'
 
-	# Listing
-	alias ls='ls --color=auto'
-	alias ll='ls -al'
-	alias l='ls -CFlh'
-	alias l.='ls -d .* --color=auto'
+  # Listing
+  alias ls='ls --color=auto'
+  alias ll='ls -al'
+  alias l='ls -CFlh'
+  alias l.='ls -d .* --color=auto'
   alias lsym='ll | grep "\->"'
 
-	# Change Directory
-	alias ..='cd ..'
+  # Change Directory
+  alias ..='cd ..'
   alias ...='cd ../..'
   alias cdhome='cd ~'
+  alias cdstud='cd ~/MEGA/Hagenberg/Studium/2015/WS\ 2015/'
 	
-    # Grep Color
-	alias grep='grep --color=auto'
-	alias egrep='egrep --color=auto'
-	alias fgrep='fgrep --color=auto'
+  # Grep Color
+  alias grep='grep --color=auto'
+  alias egrep='egrep --color=auto'
+  alias fgrep='fgrep --color=auto'
 
   # Make Parent Directorys ondemand
-	alias mkdir='mkdir -pv'
+  alias mkdir='mkdir -pv'
 
-	# Color for diff with colordiff
-	alias diff='colordiff'
+  # Color for diff with colordiff
+  alias diff='colordiff'
 
-	# make Mount readable
-	alias mount='mount | column -t'
+  # make Mount readable
+  alias mount='mount | column -t'
 
-	# confirm before action
-	alias rm='rm -I --preserve-root'
-	alias mv='mv -i'
-	alias cp='cp -i'
-	alias ln='ln -i'
+  # confirm before action
+  alias rm='rm -I --preserve-root'
+  alias mv='mv -i'
+  alias cp='cp -i'
+  alias ln='ln -i'
 
   # clear
   alias c='clear'
+
+# remap esc to capslock (and remove lock) for vim
+# xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
 PS1='[\u@\h \W]\$ '

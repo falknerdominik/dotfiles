@@ -49,5 +49,5 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 twm &
-exec cinnamon-session 
+exec cinnamon-session
 exec $1
