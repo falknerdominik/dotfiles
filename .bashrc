@@ -30,8 +30,8 @@ man() {
   alias ..='cd ..'
   alias ...='cd ../..'
   alias cdhome='cd ~'
-  alias cdstud='cd ~/MEGA/Hagenberg/Studium/2015/WS\ 2015/'
-	
+  alias cdstud='cd ~/MEGA/Hagenberg/Studium/2015/'
+
   # Grep Color
   alias grep='grep --color=auto'
   alias egrep='egrep --color=auto'
@@ -55,8 +55,16 @@ man() {
   # clear
   alias c='clear'
 
+  # vim
+  alias :wq='exit'
+
+#  sh /usr/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
+#  powerline-setup
+
+
 # remap esc to capslock (and remove lock) for vim
 # xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+  exec fish
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
