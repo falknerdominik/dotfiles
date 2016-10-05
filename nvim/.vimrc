@@ -34,6 +34,30 @@ map <F5> :w <CR> :!clear <CR> :make <CR> :!echo "--------------Running----------
 " press <esc> to hide search markup
 " nnoremap <silent> <esc> :nohlsearch<esc>
 
+call plug#begin('~/.vim/plugged')
+  Plug 'airblade/vim-gitgutter'
+  Plug 'tpope/vim-surround'
+  Plug 'unblevable/quick-scope'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+call plug#end()
+
+" airline
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'wombat'
+let g:airline_powerline_fonts = 1
+set t_Co=256 " show colors
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+
+" quickscope
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
 " Coding
 syntax enable			      " Syntax Highlighting
 set makeprg=fpc\ -Mtp\ -Criot\ -gl\ % " set :make command
