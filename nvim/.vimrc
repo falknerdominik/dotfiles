@@ -10,10 +10,10 @@ set linebreak     " break lines at word
 set showbreak=+++ " wrap-broken line prefix
 
 set autoindent    " auto-intend new lines
-set shiftwidth=2  " if tabstop not set tab = 2 spaces  
+set shiftwidth=4  " if tabstop not set tab = 2 spaces  
 set smartindent   " enable smartindent
 set smarttab      " enable smart tab
-set softtabstop=2 " tab = 2 spaces
+set softtabstop=4 " tab = 2 spaces
 
 set hlsearch      " highlight all search results
 set smartcase     " enable smart-case search
@@ -40,6 +40,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'unblevable/quick-scope'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'matchit.zip'
+  Plug 'othree/html5.vim'
 call plug#end()
 
 " airline
