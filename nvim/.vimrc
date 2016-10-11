@@ -3,8 +3,9 @@ set number        " Show linenumber
 set relativenumber " show number relative to current one
 set ruler         " show ruler
 set visualbell    " use visual bell (no beeping)
-set novb
-set so=20         " scroll page bevore coursair reaches the bottom
+set t_vb=           " set no visual bell effect
+set so=20         " scroll page before coursair reaches the bottom
+set sidescrolloff=20 " horizontal scroll offset
 syntax enable   " Syntax Highlighting
 
 set wrap          " lines longer than the screen expand on the next line
@@ -26,67 +27,63 @@ set incsearch     " searches for strings incrementally
 set noswapfile          " no more swap file (prefering git)
 set encoding=utf-8      " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file.
-set timeoutlen=1000
+set timeoutlen=500      " set timeout for command (for example leader)
 
-let mapleader=','
+let mapleader=','       " set leader
 let maplocalleader=','
-set showcmd
-set pastetoggle=<F2>
+
+set showcmd             " show command in lower righthand corner
+set pastetoggle=<F2>    " toggle paste mode with F2
+
+
+" Keybindings
+    " compile and run mapped to F5
+     map <F5> :w <CR> :!clear <CR> :make <CR> :!echo '--------------Running---------------'; :!make.sh\ run <CR>
+
+    " Allow saving of files as sudo when I forgot to start vim using sudo.
+    cmap w!! w !sudo tee > /dev/null %
+
+    " Make
+      set makeprg=./make.sh\ build
+
+    " LaTeX (rubber) macro for compiling
+    nmap <leader>c :w<CR>:!rubber --warn all --pdf %<CR>
+
+    " View PDF macro; '%:r' is current file's root (base) name.
+    nmap <leader>v :!evince %:r.pdf 2> /dev/null &<CR><CR>
 
 " vim-PLUG
 call plug#begin('~/.vim/plugged')
 
-" Make sure you use single quotes
-" AIRLINE for the status bar
-Plug 'vim-airline/vim-airline'          " airline
-Plug 'vim-airline/vim-airline-themes'   " airline-theme
-Plug 'unblevable/quick-scope'           " highlight when pressing f in normal mode
-Plug 'SirVer/ultisnips'                 " snippet management
-Plug 'airblade/vim-gitgutter'           " show git status on left of line
-Plug 'tpope/vim-surround'
+    Plug 'vim-airline/vim-airline'          " airline
+    Plug 'vim-airline/vim-airline-themes'   " airline-theme
+    Plug 'unblevable/quick-scope'           " highlight when pressing f in normal mode
+    Plug 'SirVer/ultisnips'                 " snippet management
+    Plug 'airblade/vim-gitgutter'           " show git status on left of line
+    Plug 'tpope/vim-surround'
 
 call plug#end()
-
-" Keybindings
-" compile and run mapped to F5
-map <F5> :w <CR> :!clear <CR> :make <CR> :!echo "--------------Running---------------"; ./%< <CR>
-
-" Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
-
-" Coding
-set makeprg=fpc\ -Mtp\ -Criot\ -gl\ % " set :make command
-
-" LaTeX (rubber) macro for compiling
-nmap <leader>c :w<CR>:!rubber --pdf --warn all %<CR>
-
-" View PDF macro; '%:r' is current file's root (base) name.
-nmap <leader>v :!evince %:r.pdf 2> /dev/null &<CR><CR>
 
 
 " PLUGIN CONFIG
 
-" AIRLINE config
-set t_Co=256 " set terminal colors for airline
-set background=dark " set background for airline
-let g:airline_powerline_fonts = 1
+    " AIRLINE config
+    set t_Co=256 " set terminal colors for airline
+    set background=dark " set background for airline
+    let g:airline_powerline_fonts = 1
+    let g:airline_right_sep='' " the separator used on the right side is none
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline_theme='wombat' " set theme
+    set laststatus=2 " Always show statusline
 
-" the separator used on the right side is none
-let g:airline_right_sep=''
 
-" set theme
-let g:airline_theme='wombat'
+    " UltiSnips config
+    "let g:UltiSnipsExpandTrigger="<tab>"
+    "let g:UltiSnipsJumpForwardTrigger="<c-b>"
+    "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" Always show statusline
-set laststatus=2
+    " make :UltiSnipsEdit split your window.
+    "let g:UltiSnipsEditSplit="vertical"
 
-" UltiSnips config
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" make :UltiSnipsEdit split your window.
-let g:UltiSnipsEditSplit="vertical"
-
-" Quick Scope
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+    " Quick Scope
+    let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
