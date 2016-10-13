@@ -61,6 +61,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'SirVer/ultisnips'                 " snippet management
     Plug 'airblade/vim-gitgutter'           " show git status on left of line
     Plug 'tpope/vim-surround'
+    Plug 'kien/ctrlp.vim'
+    Plug 'tomtom/tcomment_vim'
 
 call plug#end()
 
@@ -74,7 +76,7 @@ call plug#end()
     let g:airline_right_sep='' " the separator used on the right side is none
     let g:airline#extensions#tabline#enabled = 1
     let g:airline_theme='wombat' " set theme
-    set laststatus=2 " Always show statusline
+    set laststatus=2 " Alwayr show statusline
 
 
     " UltiSnips config
@@ -87,3 +89,7 @@ call plug#end()
 
     " Quick Scope
     let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+    
+    " ctrlp - fuzzy search
+    let g:ctrlp_map = '<c-p>'
+    let g:ctrlp_cmd = 'CtrlP'
