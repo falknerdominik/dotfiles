@@ -1,0 +1,65 @@
+#!/bin/bash
+
+function printHelp {
+    echo;
+    echo "dockerctrl [OPTION]";
+    echo;
+    echo "  -h, --help                show help";
+    echo "  enter <CONTAINER-NAME>    use the interactive terminal of container";
+    echo "  updatehosts               regenerates all of the /etc/hosts files ";
+    echo "                            on the containers and the host to contain ";
+    echo "                            all the ips and hostnames of the above. ";
+}
+
+function listip {
+    echo "# Docker Containers";
+    for vm in `docker ps|tail -n +2|awk '{print $NF}'`; 
+    do
+        ip=`docker inspect --format '{{ .NetworkSettings.IPAddress }}' $vm`;
+        echo "$ip  $vm";
+    done    
+    echo "";
+
+}
+
+function updateip {
+
+    for vm in `docker ps|tail -n +2|awk '{print $NF}'`;
+    do
+        echo "copy hosts file to  $vm";
+        docker exec -i $vm sh -c 'cat > /etc/hosts' < /tmp/hosts
+    done
+
+
+}
+
+
+function entercontainer {
+    id=`docker ps -aq --filter="name=$1"`
+    echo $id;   
+    docker exec -ti $id /bin/bash
+}
+
+case "$1" in
+    enter)
+        echo "entering $2"
+        entercontainer $2;
+        ;;
+    updatehosts)
+        # generate hosts config
+        listip > /etc/hosts.d/docker
+        # generate hosts for contianers
+        listip > /tmp/hosts
+        echo "127.0.0.1 localhost" >> /tmp/hosts
+
+        # update containers /etc/hosts
+        updateip
+
+        # update hosts /etc/hosts
+        cat /etc/hosts.d/* > /etc/hosts
+        ;;
+    -h) printHelp ;;
+    --help) printHelp ;;
+    "") printHelp ;;
+esac
+
