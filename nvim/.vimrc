@@ -38,7 +38,7 @@ set pastetoggle=<F2>    " toggle paste mode with F2
 
 " Keybindings
     " compile and run mapped to F5
-     map <F5> :w <CR> :!clear <CR> :make <CR> :!echo '--------------Running---------------'; :!make.sh\ run <CR>
+    map <F5> :w <CR> :!clear <CR> :make <CR> :!echo '--------------Running---------------'; :!make.sh\ run <CR>
 
     " Allow saving of files as sudo when I forgot to start vim using sudo.
     cmap w!! w !sudo tee > /dev/null %
