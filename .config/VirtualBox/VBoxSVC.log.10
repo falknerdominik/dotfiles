@@ -1,0 +1,33 @@
+VirtualBox XPCOM Server 5.1.6 r110634 linux.amd64 (Sep 17 2016 15:36:37) release log
+00:00:00.000260 main     Log opened 2016-10-16T15:11:59.970529000Z
+00:00:00.000263 main     Build Type: release
+00:00:00.000266 main     OS Product: Linux
+00:00:00.000266 main     OS Release: 4.7.5-1-ARCH
+00:00:00.000267 main     OS Version: #1 SMP PREEMPT Sat Sep 24 13:04:22 CEST 2016
+00:00:00.000289 main     DMI Product Name: HP ProBook 6560b
+00:00:00.000294 main     DMI Product Version: A0001D02
+00:00:00.000329 main     Host RAM: 7920MB total, 5594MB available
+00:00:00.000332 main     Executable: /usr/lib/virtualbox/VBoxSVC
+00:00:00.000333 main     Process ID: 10477
+00:00:00.000334 main     Package type: LINUX_64BITS_GENERIC (OSE)
+00:00:00.001754 main     IPC socket path: /tmp/.vbox-dfalkner-ipc/ipcd
+00:00:00.105562 nspr-2   VirtualBox: object creation starts
+00:00:00.105660 nspr-2   Home directory: '/home/dfalkner/.config/VirtualBox'
+00:00:00.111264 nspr-2   NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp36s0b1: VBoxNetAdpCtl: ioctl failed: Operation not supported
+00:00:00.117803 nspr-2   NAT: resolv.conf: nameserver 192.168.1.1
+00:00:00.117843 nspr-2   HostDnsMonitor: old information
+00:00:00.117847 nspr-2     no server entries
+00:00:00.117850 nspr-2     no domain set
+00:00:00.117852 nspr-2     no search string entries
+00:00:00.117855 nspr-2   HostDnsMonitor: new information
+00:00:00.117857 nspr-2     server 1: 192.168.1.1
+00:00:00.117860 nspr-2     no domain set
+00:00:00.117862 nspr-2     no search string entries
+00:00:00.117868 nspr-2   HostDnsMonitorProxy::notify
+00:00:00.121401 nspr-2   VD: VDInit finished
+00:00:00.121485 nspr-2   ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={0eb668d2-495e-5a36-8890-29999b5f030c} aComponent={SystemPropertiesWrap} aText={Cannot determine default Guest Additions ISO location. Most likely they are not available}, preserve=false aResultDetail=0
+00:00:00.121954 nspr-2   VirtualBox: object created
+00:00:05.125402 main     VirtualBox: object deletion starts
+00:00:05.623113 Watcher  ERROR [COM]: aRC=E_ACCESSDENIED (0x80070005) aIID={0169423f-46b4-cde9-91af-1e9d5b6cd945} aComponent={VirtualBoxWrap} aText={The object is not ready}, preserve=false aResultDetail=0
+00:00:10.125839 main     {00007f8818014d60} HostPowerServiceLinux::~HostPowerServiceLinux: RTThreadWait() for 5000 ms failed with VERR_TIMEOUT
+00:00:10.126215 main     VirtualBox: object deleted

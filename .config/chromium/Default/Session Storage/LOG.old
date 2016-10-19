@@ -1,0 +1,15 @@
+2016/10/17-17:04:18.573 1289 Reusing MANIFEST /home/dfalkner/.config/chromium/Default/Session Storage/MANIFEST-000001
+2016/10/17-17:04:18.573 1289 Recovering log #501
+2016/10/17-17:04:18.574 1289 Reusing old log /home/dfalkner/.config/chromium/Default/Session Storage/000501.log 
+2016/10/17-17:10:13.414 1815 Level-0 table #505: started
+2016/10/17-17:10:13.415 1815 Level-0 table #505: 32071 bytes OK
+2016/10/17-17:10:13.416 1815 Delete type=0 #501
+2016/10/17-17:10:13.416 1815 Compacting 4@0 + 1@1 files
+2016/10/17-17:10:13.441 1815 Generated table #506@0: 10575 keys, 162163 bytes
+2016/10/17-17:10:13.441 1815 Compacted 4@0 + 1@1 files => 162163 bytes
+2016/10/17-17:10:13.442 1815 compacted to: files[ 0 1 1 0 0 0 0 ]
+2016/10/17-17:10:13.442 1815 Delete type=2 #505
+2016/10/17-17:10:13.442 1815 Delete type=2 #496
+2016/10/17-17:10:13.442 1815 Delete type=2 #500
+2016/10/17-17:10:13.442 1815 Delete type=2 #498
+2016/10/17-17:10:13.442 1815 Delete type=2 #502

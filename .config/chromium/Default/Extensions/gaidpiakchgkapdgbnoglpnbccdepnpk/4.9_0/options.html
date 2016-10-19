@@ -1,0 +1,135 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Google Analytics URL Builder Options</title>
+    <!-- Bootstrap -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:500,399' rel='stylesheet' type='text/css'>
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/slick.grid.css" type="text/css" />
+    <link rel="stylesheet" href="styles/jquery-ui-1.8.20.custom.css" type="text/css" />
+    <link rel="stylesheet" href="styles/options.css" type="text/css" />
+    <script src="scripts/jquery-1.7.2.min.js"></script>
+    <script src="scripts/jquery-ui-1.8.20.custom.min.js"></script>
+    <script src="scripts/jquery.event.drag-2.0.min.js"></script>
+    <script src="scripts/slick.core.js"></script>
+    <script src="scripts/slick.grid.js"></script>
+    <script src="scripts/slick.editors.js"></script>
+    <script src="scripts/date.js"></script>
+    <script src="scripts/BlobBuilder.js"></script>
+    <script src="scripts/FileSaver.js"></script>
+    <script src="scripts/options.js"></script>
+    <script src="scripts/analytics.js"></script>
+</head>
+<body>
+    <div class="panel panel-default options-panel">
+        <div class="panel-heading">
+            <div class="panel-title-container center-block"><h3 class="panel-title">Google Analytics URL Builder</h3></div>
+
+        </div>
+        <div class="panel-body center-block">
+            <label class="section-heading">Quick Sets Configuration</label>
+            <ul id="optionsList">
+                <li>Fill the table with your most popular tag combinations. Don't forget to give every set a catchy name in the "Set Name" column. i.e. "My Facebook wall"</li>
+                <li>You can click a cell to edit it</li>
+                <li>For faster performance, mark as "Default" your most common tag set.</li>
+            </ul>
+
+            <div id="myGridContainer">
+                <label class="gridlabel first">Default</label>
+                <label class="gridlabel">Set Name*</label>
+                <label class="gridlabel">Source*</label>
+                <label class="gridlabel">Medium*</label>
+                <label class="gridlabel">Term</label>
+                <label class="gridlabel">Content</label>
+                <label class="gridlabel">Campaign*</label>
+                <div id="myGrid" style="width: 860px;"></div>
+                <div class="newRowContainer">
+                    <input class="insert first" type='text' id='combinationName' />
+                    <input class="insert" type='text' id='source' />
+                    <input class="insert" type='text' id='medium' />
+                    <input class="insert" type='text' id='term' />
+                    <input class="insert" type='text' id='content' />
+                    <input class="insert" type='text' id='campaign' />
+                    <button class="btn btn-primary addButton" type="submit">ADD</button>
+                </div>
+            </div>
+            <span>You can share your quick-sets with your collegues for better standartization (or just for the sake of backup), by clicking the <b>Backup</b> & <b>Restore</b> buttons.</span>
+            <!--Backup/Restore feature-->
+            <div class="buttons">
+                <button id="backupFile" class="backup btn btn-default" href="#">BACKUP</button>
+                <button id="fileSelect" class="restore btn btn-default" href="#">RESTORE</button>
+                <input type="file" class="restore" id="fileElem" /> <!--Hidden-->
+            </div>
+            <!--Backup/Restore feature-->
+
+            <hr />
+            <label class="section-heading large">URL shortening configuration</label>
+            <br/>
+            <label>Choose your default shortening service:</label>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="defaultShort" value="bitly">
+                    Bitly
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="defaultShort" value="google">
+                    Google
+                </label>
+            </div>
+            <br/>
+            <div id="googleSection">
+                <label class="section-heading">Google shortening Configuration</label>
+                <br/>
+                <label class="googleDescription">
+                    In order to use Google Url Shortner service, you need to authorize access to your Google Shortner acccount. <br />it's safe and secure using the official Google oAuth protocol.
+                </label>
+                <button id="btnEnableGoogle" class="btn btn-default" href="#">Enable</button>
+                <button id="btnEnabledGoogle" class="btn btn-success disabled" href="#">Enabled</button>
+            </div>
+            <br/>
+            <div id="bitlySection">
+                <label class="section-heading">Bit.ly Configuration</label>
+                <br/>
+                <label>Bit.ly feature may not work properly when using Bitly with Facebook/Twitter login</label>
+                <form class="form-horizontal" role="form">
+                    <br/>
+                    <div class="form-group row">
+                        <label class="control-label col-sm-2" for="username">Your Bit.ly username:</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" id="username" name="username">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="control-label col-sm-2" for="apikey">Bit.ly API key:<a href="https://bitly.com/a/settings/advanced" target="_blank">(?)</a></label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" id="apikey" name="apikey">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            
+            <hr />
+            <a href="http://www.youtube.com/watch?v=5VFyJ1S2fS8" class="section-heading" target="_blank">Watch: How to use this plugin</a>
+            <div id="dialog" style="display: none;" title="Backup quicksets">
+                <div style="text-align: center;">
+                    Filename: <input type="text" id="filename" size="29" /><br /><br />
+                    <i>Backup will be saved in your downloads folder.</i>
+                </div>
+            </div>
+            <div id="confirm" style="display: none;" title="Warning. Please confirm.">
+                <div style="text-align: center;">
+                    <br />
+                    <i>Warning! Importing file will replace all your current quicksets.</i>
+                    <br />
+                    <i>Are you sure you want to overwrite it with your backup?</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

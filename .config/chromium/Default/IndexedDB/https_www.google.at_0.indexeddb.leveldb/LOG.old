@@ -1,0 +1,3 @@
+2016/10/18-20:51:36.318 1283 Reusing MANIFEST /home/dfalkner/.config/chromium/Default/IndexedDB/https_www.google.at_0.indexeddb.leveldb/MANIFEST-000001
+2016/10/18-20:51:36.319 1283 Recovering log #3
+2016/10/18-20:51:36.322 1283 Reusing old log /home/dfalkner/.config/chromium/Default/IndexedDB/https_www.google.at_0.indexeddb.leveldb/000003.log 
