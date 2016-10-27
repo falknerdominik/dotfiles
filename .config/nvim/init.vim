@@ -60,9 +60,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'unblevable/quick-scope'           " highlight when pressing f in normal mode
     Plug 'SirVer/ultisnips'                 " snippet management
     Plug 'airblade/vim-gitgutter'           " show git status on left of line
-    Plug 'tpope/vim-surround'
-    Plug 'kien/ctrlp.vim'
-    Plug 'tomtom/tcomment_vim'
+    Plug 'tpope/vim-surround'               " change surroundings of anything
+    Plug 'kien/ctrlp.vim'                   " fuzzy search
+    Plug 'tomtom/tcomment_vim'              " comment everywhere
+    Plug 'rust-lang/rust.vim'               " support for rust language
+    Plug 'scrooloose/syntastic'             " syntax checker
 
 call plug#end()
 
@@ -93,3 +95,13 @@ call plug#end()
     " ctrlp - fuzzy search
     let g:ctrlp_map = '<c-p>'
     let g:ctrlp_cmd = 'CtrlP'
+
+    " syntastic config
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
