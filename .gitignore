@@ -1,0 +1,9 @@
+# ignore logs
+*.log
+*.log*
+
+# ignore lock files
+*~
+
+# ignore chromium cache
+.config/chromium/*
