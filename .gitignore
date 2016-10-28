@@ -7,3 +7,11 @@
 
 # ignore chromium cache
 .config/chromium/*
+
+# change frequently without use (last files opened etc)
+.config/Code Industry/Master PDF Editor.conf
+.config/Thunar/accels.scm
+.config/gconf/apps/guake/style/%gconf.xml
+.config/leafpad/leafpadrc
+.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+
