@@ -183,7 +183,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # finds out, if available)
 bar {
         status_command i3status
-	position bottom
+	position top
         tray_output primary
 	colors {
 	  background #2f343f
@@ -198,12 +198,18 @@ bar {
 # lock screen
 bindsym $mod+shift+l exec --no-startup-id i3lock -t -i /home/dfalkner/.dotfiles/dotfiles/lock.png
 
+# set window to always be floating
+for_window[instance="XMathematica"] floating enable
+
 # for i3-gaps to work disable borders
 for_window [class="^.*"] border pixel 
 
 # i3-gaps
 gaps inner 5
 gaps outer 2
+
+# i3-gaps only show gaps if more windows
+smart_gaps on
 
 # start at login -> exec
 exec --no-startup-id megasync
@@ -224,3 +230,5 @@ exec --no-startup-id guake -t
 # start albert omnilauncher
 exec --no-startup-id albert
 
+# start nextcloud
+exec --no-startup-id nextcloud
