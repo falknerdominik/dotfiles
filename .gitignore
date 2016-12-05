@@ -14,4 +14,14 @@
 .config/gconf/apps/guake/style/%gconf.xml
 .config/leafpad/leafpadrc
 .config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
-
+.config/GitKraken
+.config/MonoDevelop-5.0
+.config/VirtualBox
+.config/codeblocks
+.config/dconf/user
+.config/filelightrc
+.config/fish/fishd.andromeda
+.config/gconf/apps/guake
+.config/libreoffice
+.config/mimeapps.list
+.config/vlc
