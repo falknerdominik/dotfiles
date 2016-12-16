@@ -25,3 +25,4 @@
 .config/libreoffice
 .config/mimeapps.list
 .config/vlc
+.config/xbuild/pkgconfig-cache-2.xml
