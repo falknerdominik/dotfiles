@@ -1,0 +1,10 @@
+#!/bin/bash
+setxkbmap -query | grep layout: | grep de >/dev/null 2>/dev/null
+if [ $? -ne 0 ]; then
+   setxkbmap de;
+   # echo "colemak";
+else
+   # echo "QUERTY";
+   setxkbmap us -variant colemak -option caps:escape;
+fi
+

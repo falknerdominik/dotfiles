@@ -1,4 +1,4 @@
-# Recent settings file for Wireshark 2.2.0.
+# Recent settings file for Wireshark 2.2.3.
 #
 # This file is regenerated each time Wireshark is quit
 # and when changing configuration profile.
@@ -70,10 +70,12 @@ column.width: %m, -1, %t, -1, %s, -1, %d, -1, %p, -1, %L, -1, %i, -1
 # Open conversation dialog tabs.
 # List of conversation names, e.g. "TCP", "IPv6".
 gui.conversation_tabs: 
+	""
 
 # Open endpoint dialog tabs.
 # List of endpoint names, e.g. "TCP", "IPv6".
 gui.endpoint_tabs: 
+	""
 
 # For RLC stats, whether to use RLC PDUs found inside MAC frames.
 # TRUE or FALSE (case-insensitive).

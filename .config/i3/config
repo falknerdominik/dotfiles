@@ -38,6 +38,9 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 bindsym $mod+s exec --no-startup-id dmenu_run
 
+# switch between colemak and querty
+bindsym $mod+F12 exec --no-startup-id togglekeymap
+
 # toggle guake
 bindsym $mod+y exec --no-startup-id guake -t
 
@@ -196,7 +199,8 @@ bar {
 }
 
 # lock screen
-bindsym $mod+shift+l exec --no-startup-id i3lock -t -i /home/dfalkner/.dotfiles/dotfiles/lock.png
+#bindsym $mod+shift+l exec --no-startup-id i3lock-wrapper -t -i /home/dfalkner/.dotfiles/dotfiles/lock.png
+bindsym $mod+shift+l exec --no-startup-id i3lock-wrapper
 
 # set window to always be floating
 for_window[instance="XMathematica"] floating enable

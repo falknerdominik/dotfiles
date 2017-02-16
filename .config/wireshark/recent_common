@@ -1,4 +1,4 @@
-# Recent settings file for Wireshark 2.2.0.
+# Recent settings file for Wireshark 2.2.3.
 #
 # This file is regenerated each time Wireshark is quit.
 # So be careful, if you want to make manual changes here.
@@ -16,10 +16,10 @@
 # Decimal numbers.
 gui.geometry_main_x: 20
 gui.geometry_main_y: 20
-gui.gtk.geometry_main_x: 6
-gui.gtk.geometry_main_y: 6
-gui.geometry_main_width: 1350
-gui.geometry_main_height: 731
+gui.gtk.geometry_main_x: 0
+gui.gtk.geometry_main_y: 21
+gui.geometry_main_width: 1916
+gui.geometry_main_height: 1055
 
 # Main window maximized.
 # TRUE or FALSE (case-insensitive).
@@ -51,3 +51,4 @@ privs.warn_if_no_npf: TRUE
 # Custom colors.
 # List of custom colors selected in Qt color picker.
 gui.custom_colors: 
+	""
